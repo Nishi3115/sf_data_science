@@ -30,4 +30,5 @@ def score_game_imp(random_predict_imp):
     print(f'Ваш алгоритм угадывает число в среднем за: {score} попыток')
     return(score)
 
-score_game_imp(random_predict_imp)
+if __name__ == '__main__':
+    score_game_imp(random_predict_imp)
