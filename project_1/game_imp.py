@@ -1,6 +1,6 @@
 import numpy as np
 
-def random_predict_imp(number:int=1) -> int:
+def random_predict_v3(number:int=1) -> int:
 
     count = 0   #переменная для подсчета кол-ва попыток
     np.random.seed(1)
@@ -17,13 +17,13 @@ def random_predict_imp(number:int=1) -> int:
             break
     return(count)
 
-def score_game_imp(random_predict_imp):
+def score_game_v3(random_predict_v3):
     count_ls = [] # список для сохранения количества попыток
     np.random.seed(1) # фиксируем сид для воспроизводимости
     random_array = np.random.randint(1, 101, size=(1000)) # загадали список чисел
 
     for number in random_array:
-        count_ls.append(random_predict_imp(number))
+        count_ls.append(random_predict_v3(number))
 
     score = int(np.mean(count_ls)) # находим среднее количество попыток
 
@@ -31,4 +31,4 @@ def score_game_imp(random_predict_imp):
     return(score)
 
 if __name__ == '__main__':
-    score_game_imp(random_predict_imp)
+    score_game_v3(random_predict_v3)
